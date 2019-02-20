@@ -1,0 +1,156 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Saisies infos locs</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script language="javascript">
+    
+    </script>
+</head>  
+<body>  
+ 
+<form name="formu" action="/recapInfo" method="POST"> 
+<div class="control-group">
+    <label class="control-label" for="numloc">Saisir le numéro de la location</label>
+    <div class="controls">
+      <input type="text" id="numloc" name="numloc" placeholder="Numéro de la location">
+    </div>
+  </div>
+  <br>
+  <div class="control-group">
+        <label class="control-label" for="an">Entrez l'année souhaitée référence</label>
+        <div class="controls">
+          <input type="text" id="an" name="an" placeholder="Année de référence location">
+        </div>
+      </div>
+    <br>
+    <div class="control-group">
+            <label class="control-label" for="immat">Immat véhicule1</label>
+            <div class="controls">
+              <input type="text" id="immat" name="immat" placeholder="Année de référence location">
+            </div>
+          </div>
+        <br>
+  <div class="control-group">
+        <label class="control-label" for="dateDeb">Entrez la date de début de loc1</label>
+        <div class="controls">
+          <input type="text" id="dateDeb" name="dateDeb" placeholder="Date de début de location">
+        </div>
+      </div>
+    <br>
+<div class="control-group">
+            <label class="control-label" for="dateFin">Saisir la date de fin de loc1</label>
+            <div class="controls">
+              <input type="text" id="dateFin" name="dateFin" placeholder="Date de fin de location">
+            </div>
+          </div>
+        <br>
+<div class="control-group">
+            <label class="control-label" for="datePaiement">Saisir la date de paiement de loc1</label>
+            <div class="controls">
+          <input type="text" id="datePaiement" name="datePaiement" placeholder="Date paiement de location">
+        </div>
+     </div>
+    <br>
+ <div class="control-group">
+    <label class="control-label" for="prixLoc1">Montant prix de la location1</label>
+    <div class="controls">
+      <input type="text" id="prixLoc1" name="prixLoc1" placeholder="Prix de la location">
+    </div>
+  </div>
+<br>
+  <div class="control-group">
+        <label class="control-label" for="immat2">Immat véhicule2</label>
+        <div class="controls">
+          <input type="text" id="immat2" name="immat2" placeholder="Immat véhicule2">
+        </div>
+      </div>
+    <br>
+    <div class="control-group">
+            <label class="control-label" for="dateDeb2">Entrez la date de début de loc2</label>
+            <div class="controls">
+              <input type="text" id="dateDeb2" name="dateDeb2" placeholder="Date de début de location2">
+            </div>
+          </div>
+        <br>
+        <div class="control-group">
+                <label class="control-label" for="dateFin2">Saisir la date de fin de loc2</label>
+                <div class="controls">
+                  <input type="text" id="dateFin2" name="dateFin2" placeholder="Date de fin de location2">
+                </div>
+              </div>
+              <br>
+              <div class="control-group">
+                    <label class="control-label" for="datePaiement2">Saisir la date de paiement de loc2</label>
+                    <div class="controls">
+                  <input type="text" id="datePaiement2" name="datePaiement2" placeholder="Date paiement de location2">
+                </div>
+             </div>
+             <br>
+             <div class="control-group">
+                    <label class="control-label" for="prixLoc2">Montant prix de la location2</label>
+                    <div class="controls">
+                      <input type="text" id="prixLoc2" name="prixLoc2" placeholder="Prix de la location 2">
+                    </div>
+                  </div>
+                <br>
+                <div class="control-group"></div>
+                <label class="control-label" for="diffdate1">Différence date location 1:</label>
+                 <div class="controls"></div>
+                  <input type="text" id="diffdate1" name="diffdate1" value="" >
+                   </div>
+                 </div>
+                 <br> 
+                 <div class="control-group"></div>
+                 <label class="control-label" for="diffdate2">Différence date location 2:</label>
+                  <div class="controls"></div>
+                   <input type="text" id="diffdate2" name="diffdate2" value="" >
+                    </div>
+                  </div>
+                  <br>
+<div class="control-group"></div>
+<label class="control-label" for="output">Le total des locations donne:</label>
+ <div class="controls"></div>
+  <input type="text" id="output" name="output" value="" >
+   </div>
+ </div>
+<br>
+  <button type="submit" class="btn">Envoi</button>
+</form>
+<br>
+<input type="button" name="bouton1" value="total locations" onclick="totalLoc()"><br><br>
+<input type="button" name="bouton2" value="diff date loc1" onclick="myDiffValueLoc1()"><br><br>
+<input type="button" name="bouton3" value="diff date loc2" onclick="myDiffValueLoc2()"><br>
+  <script>
+    function totalLoc(){
+        var total=0;
+     var x=document.getElementById("prixLoc1").value;
+     var y=document.getElementById("prixLoc2").value;
+     total=parseInt(x)+parseInt(y);
+     document.getElementById("output").value=total;
+         
+}
+function dateDiff(datefn,datestart){
+ var dateFin=new Date (datefn.substring(6,10),parseInt(datefn.substring(3,5))-1,datefn.substring(0,2)); 
+var nDebut=new Date(datestart.substring(6,10),parseInt(datestart.substring(3,5))-1,datestart.substring(0,2)); 
+var diff=dateFin-nDebut;
+var diff_jour = (diff / (86400000))//1000*60*60*24 - jour en millisecondes;
+return Math.round(diff_jour);
+
+var diffDateLoc1=  document.getElementById("prixLoc1").value;
+}
+function myDiffValueLoc1(){
+ var x=document.getElementById("dateDeb").value;
+ var y=document.getElementById("dateFin").value;
+ document.getElementById("diffdate1").value=dateDiff(y,x);
+}
+
+function myDiffValueLoc2(){
+var x=document.getElementById("dateDeb2").value;
+ var y=document.getElementById("dateFin2").value;
+ document.getElementById("diffdate2").value=dateDiff(y,x);
+}
+  </script> 
+</body>  
+</html> 

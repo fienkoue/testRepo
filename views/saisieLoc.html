@@ -1,0 +1,107 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Saisies infos locs</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script language="javascript">
+    function dateDiff(datefn,datestart) {
+      /*var dateInit=document.getElementById('dateDeb').value;
+ var dateFinale=document.getElementById('dateFin').value;*/
+
+var dateFin=new Date (datefn.substring(6,10),parseInt(datefn.substring(3,5))-1,datefn.substring(0,2)); 
+var nDebut=new Date(datestart.substring(6,10),parseInt(datestart.substring(3,5))-1,datestart.substring(0,2)); 
+ 
+ var diff=dateFin-nDebut;
+
+ var diff_jour = (diff / (86400000))//1000*60*60*24 - jour en millisecondes;
+return Math.round(diff_jour);
+
+/*alert(diff_jour);*/
+    }
+    
+    </script>
+
+</head>  
+<body>  
+ 
+<form name="formul" action="/saisLoc" method="POST"> 
+
+<div class="control-group">
+    <label class="control-label" for="numloc">Saisir le numéro de la location</label>
+    <div class="controls">
+      <input type="text" id="numloc" name="numloc" placeholder="Numéro de la location">
+    </div>
+  </div>
+  <br>
+
+ <div class="control-group">
+    <label class="control-label" for="dateDeb">Entrez la date de début</label>
+    <div class="controls">
+      <input type="text" id="dateDeb" name="dateDeb" placeholder="Date de début de location">
+    </div>
+  </div>
+<br>
+
+ <div class="control-group">
+    <label class="control-label" for="dateFin">Entrez la date de fin</label>
+    <div class="controls">
+      <input type="text" id="dateFin" name="dateFin" placeholder="Date de fin de location">
+    </div>
+  </div>
+<br>
+
+ <div class="control-group">
+    <label class="control-label" for="prixLoc">Saisir le prix de la location</label>
+    <div class="controls">
+      <input type="text" id="prixLoc" name="prixLoc" placeholder="Prix de la location">
+    </div>
+  </div>
+
+<br>
+<div class="control-group"></div>
+<label class="control-label" for="output">La différence calculée est de:</label>
+ <div class="controls"></div>
+  <input type="text" id="output" name="output" value="" >
+   </div>
+ </div>
+<br>
+  <button type="submit" class="btn">Envoi</button>
+</form>
+<br>
+<input type="button" name="bouton" value="Valeur Différence" onclick="myDiffValue()"><br>
+
+  <script>
+    function myDiffValue(){
+     var x=document.getElementById("dateDeb").value;
+     var y=document.getElementById("dateFin").value;
+       document.getElementById("output").value=dateDiff(y,x);
+}
+
+  /*Stocker une fonction dans la valeur d'un input*/  
+/*document.getElementById("output").value=dateDiff(document.getElementById('dateFin').value,document.getElementById('dateDeb').value);*/
+/*function afficher(formul){
+  /*var node = document.createElement("p");*/
+ /*  var testessai=dateDiff(document.getElementById('dateFin').value,document.getElementById('dateDeb').value);*/
+ /* node.appendChild(textnode);*/
+  /*document.getElementById("output").appendChild(node);
+
+}*/
+
+ /* var p=document.createElement("p");
+  document.body.appendChild(p);
+
+  function myFunction() {
+  var node = document.createElement("p");
+  
+  document.getElementById("para").appendChild(node);
+
+    var testin =document.formul.input.value; 
+  document.formul.output.value=testessai ;
+
+  document.getElementById("boutDiff").value;
+}*/
+  </script>
+  
+</body>  
+</html> 

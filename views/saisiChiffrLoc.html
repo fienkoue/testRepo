@@ -1,0 +1,67 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Saisies infos locs</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script language="javascript">
+    
+    </script>
+</head>  
+<body>  
+ 
+<form name="formulaire" action="/saisChif" method="POST"> 
+<div class="control-group">
+    <label class="control-label" for="numloc">Saisir le numéro de la location</label>
+    <div class="controls">
+      <input type="text" id="numloc" name="numloc" placeholder="Numéro de la location">
+    </div>
+  </div>
+  <br>
+ <div class="control-group">
+    <label class="control-label" for="prixLoc1">Saisir  prix de la location n°1</label>
+    <div class="controls">
+      <input type="text" id="prixLoc1" name="prixLoc1" placeholder="Prix de la location">
+    </div>
+  </div>
+<br>
+<div class="control-group">
+        <label class="control-label" for="prixLoc2"> prix de la location n°2</label>
+        <div class="controls">
+          <input type="text" id="prixLoc2" name="prixLoc2" placeholder="Prix de la location">
+        </div>
+      </div>
+    <br>
+    <div class="control-group">
+            <label class="control-label" for="prixLoc3">Le prix de la location n°3</label>
+            <div class="controls">
+              <input type="text" id="prixLoc3" name="prixLoc3" placeholder="Prix saisi">
+            </div>
+          </div>
+        <br>
+
+<div class="control-group"></div>
+<label class="control-label" for="output">Le total des locations donne:</label>
+ <div class="controls"></div>
+  <input type="text" id="output" name="output" value="" >
+   </div>
+ </div>
+<br>
+  <button type="submit" class="btn">Envoi</button>
+</form>
+<br>
+<input type="button" name="bouton" value="total locations" onclick="totalLoc()"><br>
+
+  <script>
+    function totalLoc(){
+        var total=0;
+     var x=document.getElementById("prixLoc1").value;
+     var y=document.getElementById("prixLoc2").value;
+     var z=document.getElementById("prixLoc3").value;
+     total=parseInt(x)+parseInt(y)+parseInt(z);
+     document.getElementById("output").value=total;
+         
+}
+  </script> 
+</body>  
+</html> 

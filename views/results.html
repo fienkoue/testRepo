@@ -1,0 +1,85 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats saisis</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>  
+<body>  
+ 
+<label class="control-label" for="Biens">Type de bien saisi</label>
+req.body.typeBiens
+<br>
+
+ <div class="control-group">
+    <label class="control-label" for="prix">Prix achat renseigné</label>
+    <div class="controls">
+<p id="demo">Changer la valeur du prix d'achat.</p>
+<button onclick="myFunction()">Try it</button>
+    </div>
+  </div>
+<br>
+
+<div style="margin-bottom: 25px" class="control-group">
+      <label class="control-label" for="inputIcon">Prix de vente obtenu</label>
+      <div class="controls">
+        <div class="input-prepend">
+          req.body.PrixDeVente
+        </div>
+      </div>
+    </div>
+<br>
+ <div class="control-group">
+    <label class="control-label" for="ca">Chiffre d'affaires</label>
+    <div class="controls">
+      req.body.chiffreAffaires
+    </div>
+  </div>
+<br>
+ <div class="control-group">
+    <label class="control-label" for="benef">Bénéfice ou Perte Renseigné</label>
+    <div class="controls">
+      req.body.benef
+    </div>
+  </div>
+<br>
+ <div class="control-group">
+    <label class="control-label" for="dateDebut">Date de début exploitation</label>
+    <div class="controls">
+      req.body.dateDebut
+    </div>
+  </div>
+<br>
+ <div class="control-group">
+    <label class="control-label" for="dateFin">Date de fin exploitation</label>
+    <div class="controls">
+      req.body.dateFin
+    </div>
+  </div>
+<br>
+<div class="control-group">
+    <label class="control-label" for="TempsPossession">Temps Possession</label>
+    <div class="controls">
+     req.body.tpsPossession
+    </div>
+  </div>
+<br>
+<div class="control-group">
+    <label class="control-label" for="chargesTotales">Charges totales</label>
+    <div class="controls">
+      req.body.chargesTotales
+    </div>
+  </div>
+
+ 
+
+
+ <script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = req.body.prixAchat;
+}
+</script>
+   
+</body>  
+</html> 
