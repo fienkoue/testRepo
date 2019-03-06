@@ -20,6 +20,8 @@ var app = express();
 var path = __dirname + '/views/';
 
 var urlencodedparser = bodyParser.urlencoded({ extended: false });
+var authenticateController=require('./controllers/authenticate-controller');
+var registerController=require('./controllers/register-controller');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -29,6 +31,10 @@ app.use(express.static('files'));
 app.get('/register', function (req, res) {
    res.sendFile(path + "index.html");
 })
+
+app.get('/login', function (req, res) {  
+   res.sendFile( path + "login.html" );  
+})  
 
 app.get('/start', function (req, res) {
 
@@ -223,10 +229,11 @@ app.post('/recapInfo', function (req, res) {
    )
 
 });
-/* route to handle login and registration */
-/* 
+console.log(authenticateController);
+console.log(registerController);
+/* route to handle login and registration*/ 
 app.post('/controllers/register-controller', registerController.register);
 app.post('/controllers/authenticate-controller', authenticateController.authenticate);
-*/
+
 app.listen(8016);
 
