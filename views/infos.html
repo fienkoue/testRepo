@@ -1,0 +1,63 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Les infos diverses</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>  
+<body> 
+<nav>
+<ul>
+<li class="menu-vehicule"><a href=".../views/vehicule.html">Les véhicules</a></li>
+<li class="menu-biens"><a href="views/biens.html">Les biens immobiliers</a></li>
+<li class="menu-locatif"><a href="views/formGestion.html">Les autres locatifs</a></li>
+<li class="menu-rendement"><a href=".../views/rendement.html">Les rendements obtenus</a></li>
+</ul>
+</nav> 
+
+<h2>Saisir vos données personnelles</h2>
+
+
+<form name="formu" action="/infos" method="POST"> 
+  
+      <div class="control-group">
+        <label class="control-label" for="nom">Saisir nom</label>
+        <div class="controls">
+        <input type="text" id="nom" name="nom" placeholder="Nom prédéfini: mico">
+        </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <label class="control-label" for="prenom">Entrez votre prénom</label>
+            <div class="controls">
+            <input type="text" id="prenom" name="prenom" placeholder="Prenom prédéfini:Aymeric">
+            </div>
+       </div>
+<br>
+       <div class="control-group">
+            <label class="control-label" for="adresse">Adresse postale</label>
+            <div class="controls">
+            <input type="text" id="adresse" name="adresse" placeholder="Saisissez votre adresse postale">
+            </div>
+       </div>
+    <br>
+    <div class="control-group">
+            <label class="control-label" for="codePostal">Code postal</label>
+            <div class="controls">
+            <input type="text" id="codePostal" name="codePostal" placeholder="Saisissez votre code postal">
+            </div>
+       </div>
+    <br>
+    <div class="control-group">
+            <label class="control-label" for="ville">Renseignez votre Ville</label>
+            <div class="controls">
+            <input type="text" id="ville" name="ville" placeholder="Ville prédéfinie:bordeaux">
+            </div>
+       </div>
+    <br>
+      <button type="submit" class="btn">Mise à jour</button>
+    </form>
+  
+</body>  
+</html> 

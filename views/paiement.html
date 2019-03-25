@@ -1,0 +1,138 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Le règlement des différentes locations</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>  
+<body> 
+<nav>
+<ul>
+<li class="menu-vehicule"><a href=".../views/vehicule.html">Les véhicules</a></li>
+<li class="menu-biens"><a href="views/biens.html">Les biens immobiliers</a></li>
+<li class="menu-locatif"><a href="views/formGestion.html">Les autres locatifs</a></li>
+<li class="menu-rendement"><a href=".../views/rendement.html">Les rendements obtenus</a></li>
+</ul>
+</nav> 
+ <h1>Infos relatives au paiement</h1>
+
+<form action="/traitementPaiement" method="POST">  
+    <div style="margin-bottom: 25px" class="control-group">
+          <label class="control-label" for="annee">Année de référence </label>
+          <div class="controls">
+            <div class="input-prepend">
+                    <select id="anneRef" name="anneRef">
+                            <option value="an1">2019</option>
+                            <option value="an2">2018</option>
+                            <option value="an3">2017</option>
+                            <option value="an4">2016</option>
+                     </select>
+            </div>
+          </div>
+        </div>
+    <br>
+
+    <div style="margin-bottom: 25px" class="control-group">
+        <label class="control-label" for="vehicule">Les véhicules loués </label>
+        <div class="controls"></div>
+        <div class="input-prepend"></div>
+      <select id="selectVeh" name="selectVeh">
+            <option value="veh1">Véhicule loué 1</option>
+            <option value="veh2">Véhicule2</option>
+            <option value="veh3">Véhicule3</option>
+            <option value="veh4">Véhicule4</option>
+          </select>
+        </div>
+        </div>
+    </div>
+        <br>
+    <div class="control-group">
+            <label class="control-label" for="periodloc1">Période de la location1</label>
+            <div class="controls">
+              <input type="periodloc1" id="periodloc1" name="periodloc1" placeholder="la période de la location1">
+        </div>
+    </div>
+        <br>
+        <div class="control-group">
+                <label class="control-label" for="periodloc2">Période de la location2</label>
+                <div class="controls">
+                  <input type="periodloc2" id="periodloc2" name="periodloc2" placeholder="la période de la location2">
+            </div>
+        </div>
+            <br>
+            <div class="control-group">
+                    <label class="control-label" for="periodloc3">Période de la location3</label>
+                    <div class="controls">
+                      <input type="periodloc3" id="periodloc3" name="periodloc3" placeholder="la période de la location3">
+                </div>
+            </div>
+                <br>
+     <div class="control-group">
+                <label class="control-label" for="numloc1">Numéro de la location1</label>
+                <div class="controls">
+                  <input type="numloc1" id="numloc1" name="numloc1" placeholder="numéro de la location1">
+                </div>
+              </div>
+            <br>
+            <div class="control-group">
+                    <label class="control-label" for="numloc2">Numéro de la location2</label>
+                    <div class="controls">
+                      <input type="numloc2" id="numloc2" name="numloc2" placeholder="numéro de la location2">
+                    </div>
+                  </div>
+                <br>
+                <div class="control-group">
+                        <label class="control-label" for="numloc3">Numéro de la location3</label>
+                        <div class="controls">
+                          <input type="numloc3" id="numloc3" name="numloc3" placeholder="numéro de la location3">
+                        </div>
+                      </div>
+                    <br>
+            <div class="control-group">
+                    <label class="control-label" for="montant1">Montant de la location 1</label>
+                    <div class="controls">
+                      <input type="montant1" id="montant1" name="montant1" placeholder="le montant reçu1">
+                    </div>
+                  </div>
+                <br>
+            <div class="control-group">
+                    <label class="control-label" for="montant2">Montant de la location 2</label>
+                    <div class="controls">
+                      <input type="montant2" id="montant2" name="montant2" placeholder="le montant reçu2">
+                    </div>
+                </div>
+            <br>
+     <div class="control-group">
+        <label class="control-label" for="montant3">Montant de la location 3</label>
+        <div class="controls">
+          <input type="montant3" id="montant3" name="montant3" placeholder="le montant reçu3">
+        </div>
+      </div>
+      <br>
+      <div class="control-group"></div>
+      <label class="control-label" for="output">Le total des locations donne:</label>
+       <div class="controls"></div>
+        <input type="text" id="output" name="output" value="" >
+         </div>
+       </div>
+    <br>
+      <button type="submit" class="btn">Submit</button>
+    
+    </form>
+</div>
+<input type="button" name="bouton" value="total locations" onclick="totalLoc()"><br>
+
+  <script>
+    function totalLoc(){
+        var total=0;
+     var x=document.getElementById("montant1").value;
+     var y=document.getElementById("montant2").value;
+     var z=document.getElementById("montant3").value;
+     total=parseInt(x)+parseInt(y)+parseInt(z);
+     document.getElementById("output").value=total;
+         
+}
+  </script> 
+</body>  
+</html> 

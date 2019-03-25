@@ -1,0 +1,90 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <title>Le total des locations ouicar et drivy</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>  
+<body> 
+<nav>
+<ul>
+<li class="menu-vehicule"><a href=".../views/vehicule.html">Les véhicules</a></li>
+<li class="menu-biens"><a href="views/biens.html">Les biens immobiliers</a></li>
+<li class="menu-locatif"><a href="views/formGestion.html">Les autres locatifs</a></li>
+<li class="menu-rendement"><a href=".../views/rendement.html">Les rendements obtenus</a></li>
+</ul>
+</nav> 
+ <h1>Infos relatives au paiement</h1>
+
+<form action="/totalLoc" method="POST">  
+    <div style="margin-bottom: 25px" class="control-group">
+          <label class="control-label" for="annee">Année de référence </label>
+          <div class="controls">
+            <div class="input-prepend">
+                    <select id="anneRef" name="anneRef">
+                            <option value="an1">2019</option>
+                            <option value="an2">2018</option>
+                            <option value="an3">2017</option>
+                            <option value="an4">2016</option>
+                     </select>
+            </div>
+          </div>
+        </div>
+    <br>
+
+    <div style="margin-bottom: 25px" class="control-group">
+        <label class="control-label" for="vehicule">Selectionner 1 vehicule </label>
+        <div class="controls"></div>
+        <div class="input-prepend"></div>
+      <select id="selectVeh" name="selectVeh">
+            <option value="veh1">Véhicule loué 1</option>
+            <option value="veh2">Véhicule2</option>
+            <option value="veh3">Véhicule3</option>
+            <option value="veh4">Véhicule4</option>
+          </select>
+        </div>
+        </div>
+    </div>
+        <br>
+    <div class="control-group">
+            <label class="control-label" for="caouicar">Chiffre affaire ouicar pour 1 année donnée</label>
+            <div class="controls">
+              <input type="caouicar" id="caouicar" name="caouicar" placeholder="Le chiffre d'affaire ouicar">
+        </div>
+    </div>
+        <br>
+        <div class="control-group">
+                <label class="control-label" for="cadrivy">Chiffre affaire drivy pour 1 année donnée</label>
+                <div class="controls">
+                  <input type="cadrivy" id="cadrivy" name="cadrivy" placeholder="Le chiffre d'affaire drivy">
+            </div>
+        </div>
+            <br>
+    
+     
+      <div class="control-group"></div>
+      <label class="control-label" for="output">Le chiffre d'affaires total donne:</label>
+       <div class="controls"></div>
+        <input type="text" id="output" name="output" value="" >
+         </div>
+       </div>
+    <br>
+      <button type="submit" class="btn">Submit</button>
+    
+    </form>
+</div>
+<input type="button" name="bouton" value="total locations" onclick="totalLoc()"><br>
+
+  <script>
+    function totalLoc(){
+        var total=0;
+     var x=document.getElementById("caouicar").value;
+     var y=document.getElementById("cadrivy").value;
+     total=parseInt(x)+parseInt(y);
+     document.getElementById("output").value=total;
+         
+}
+  </script> 
+</body>  
+</html> 

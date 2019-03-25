@@ -22,7 +22,8 @@ module.exports.register=function(req,res){
     var users={
         "name":req.body.name,
         "email":req.body.email,
-        "password":encryptedString,
+        /*"password":encryptedString*/
+        "password":req.body.password,
         "created_at":today,
         "updated_at":today
     }
